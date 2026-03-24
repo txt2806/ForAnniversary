@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoảng Cách Nhưng Không Xa 💖</title>
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Feather icons for minimalist vector icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <!-- Starry Background Canvas -->
+    <canvas id="stars"></canvas>
+
+    <!-- Audio controls -->
+    <div class="music-player fade-in" id="musicPlayer">
+        <audio id="bgMusic" loop>
+            <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_2d03cc3e6c.mp3" type="audio/mpeg">
+        </audio>
+        <button id="musicToggle"><i data-feather="volume-x"></i></button>
+        <span class="music-hint">Bật nhạc lên nhé 🎵</span>
+    </div>
+
+    <main>
+        <!-- SECTION 1: Opening (Distance) -->
+        <section class="screen split-screen split-screen-1">
+            <h1 class="fade-text delay-1">Chúng ta cách nhau...<br><span class="highlight distance-counter"
+                    data-target="1135">0</span> <span class="highlight">km</span></h1>
+            <div class="scroll-down fade-text delay-4">
+                <p>Kéo xuống nghen 👇</p>
+            </div>
+        </section>
+
+        <section class="screen split-screen split-screen-2 hidden">
+            <h2 class="fade-text">Dù khoảng cách là bao nhiêu...</h2>
+        </section>
+
+        <section class="screen split-screen split-screen-3 hidden">
+            <h2 class="fade-text final-opening">Nhưng chưa bao giờ xa nhau trong tim ❤️</h2>
+            <!-- Heart pulse animation -->
+            <div class="pulsing-heart fade-in delay-2">
+                <i data-feather="heart" class="heart-icon"></i>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MAP & TIME (Ý tưởng 1) -->
+        <section class="screen time-counter-section hidden">
+            <h3>Bản đồ nối hai thế giới 🌍</h3>
+            <p class="subtitle">1700km chưa từng làm khó được đôi ta...</p>
+
+            <div class="map-connection fade-in delay-1">
+                <div class="location-dot pulse">
+                    <i data-feather="map-pin"></i> <span>Hà Nội</span>
+                </div>
+                <div class="dashed-line">
+                    <div class="plane-icon"><i data-feather="send"></i></div>
+                </div>
+                <div class="location-dot pulse">
+                    <i data-feather="map-pin"></i> <span id="emLocation">TP. HCM</span>
+                </div>
+            </div>
+
+            <h3 class="mt-4 fade-in delay-2">Chúng ta đã yêu nhau được</h3>
+            <div class="time-boxes fade-in delay-3" id="timeBoxes">
+                <div class="time-box">
+                    <span class="time-val" id="daysVal">365</span>
+                    <span class="time-label">Ngày</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="hoursVal">0</span>
+                    <span class="time-label">Giờ</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="minsVal">0</span>
+                    <span class="time-label">Phút</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="secsVal">0</span>
+                    <span class="time-label">Giây</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Timeline & Map Story (Ý tưởng 1 Enhanced) -->
+        <section class="screen timeline-section hidden">
+            <h3 class="glowing-title">Dấu ấn thời gian 🕰️</h3>
+            <p class="subtitle fade-in">Những khoảnh khắc nối liền hai đầu bản đồ...</p>
+
+            <div class="timeline">
+                <div class="timeline-item left hidden pop-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel">
+                        <div class="placeholder-img">
+                            <i data-feather="image"></i><span>[Thêm ảnh em mỉm cười]</span>
+                        </div>
+                        <h4>Ngày đầu tương tư</h4>
+                        <p>Cô gái ở <span id="emStoryLocation">TP. HCM</span> ngày hôm đó đã làm anh rung động từ cái
+                            nhìn đầu tiên.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right hidden pop-in delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel">
+                        <h4>Cuộc gọi đầu tiên (4:50:00)</h4>
+                        <p>Nói chuyện tới gần sáng mà chẳng hết chuyện. Giọng em kể về một ngày của em nghe mới bình yên
+                            làm sao.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left hidden pop-in delay-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel">
+                        <div class="placeholder-img">
+                            <i data-feather="video"></i><span>[Ảnh screenshot call video kute]</span>
+                        </div>
+                        <h4>01/04 - Cá Tháng Tư có thật</h4>
+                        <p>Ngày người ta nói dối, nhưng lời nói yêu em thì 100% chân thật.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Virtual Gallery (Ý tưởng 3) -->
+        <section class="screen gallery-section hidden">
+            <h3 class="glowing-title">Triển lãm duy nhất một nàng thơ 🎨</h3>
+            <p class="subtitle fade-in">Vuốt / Cuộn ngang để tham quan "phòng trưng bày" đặc biệt nhất đời anh</p>
+
+            <div class="gallery-wrapper fade-in delay-1">
+                <div class="gallery-track">
+                    <!-- Artwork 1 -->
+                    <div class="artwork-frame">
+                        <div class="artwork-img placeholder-img">
+                            <i data-feather="sun"></i><span>[Ảnh lúc em mới ngủ dậy]</span>
+                        </div>
+                        <div class="artwork-caption">
+                            <h4 class="artwork-title">Bình minh thứ 200</h4>
+                            <p class="artwork-desc">"Dù chỉ nhìn qua màn hình, đây vẫn là tác phẩm tuyệt nhất mỗi sáng
+                                thức dậy."</p>
+                        </div>
+                    </div>
+                    <!-- Artwork 2 -->
+                    <div class="artwork-frame">
+                        <div class="artwork-img placeholder-img">
+                            <i data-feather="coffee"></i><span>[Ảnh em ăn vặt/uống trà sữa]</span>
+                        </div>
+                        <div class="artwork-caption">
+                            <h4 class="artwork-title">Cô bé má bánh bao</h4>
+                            <p class="artwork-desc">"Nhìn dáng vẻ ăn uống say mê này, chỉ muốn ở bên cạnh bảo vệ mãi
+                                thôi."</p>
+                        </div>
+                    </div>
+                    <!-- Artwork 3 -->
+                    <div class="artwork-frame">
+                        <div class="artwork-img placeholder-img">
+                            <i data-feather="moon"></i><span>[Ảnh chụp lúc khuya/nháy mắt]</span>
+                        </div>
+                        <div class="artwork-caption">
+                            <h4 class="artwork-title">Vì sao đêm nay</h4>
+                            <p class="artwork-desc">"Trong phòng tối om, nụ cười em vẫn lấp lánh như ngàn vì sao."</p>
+                        </div>
+                    </div>
+
+                    <!-- Countdown End Room -->
+                    <div class="artwork-frame countdown-frame">
+                        <div class="countdown-content glass-panel h-100 flex-center">
+                            <h4 class="super-romantic">Sắp Gặp Nhau Rồi! ⏳</h4>
+                            <p style="margin-bottom: 20px;">Thời gian đến lúc anh được ôm em:</p>
+                            <div class="countdown-boxes">
+                                <div class="c-box"><span id="mDays">00</span><small>Ngày</small></div>
+                                <div class="c-box"><span id="mHours">00</span><small>Giờ</small></div>
+                                <div class="c-box"><span id="mMins">00</span><small>Phút</small></div>
+                                <div class="c-box"><span id="mSecs">00</span><small>Giây</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Chat History -->
+        <section class="screen chat-history hidden">
+            <h3 class="romantic-text">Góc kỉ niệm vụn vặt...</h3>
+
+            <div class="chat-container">
+                <div class="chat-wrapper start hidden slide-right">
+                    <div class="avatar">A</div>
+                    <div class="bubble bubble-left">
+                        Hôm nay em ăn món gì đó? Chụp anh xem đi.
+                    </div>
+                </div>
+                <div class="chat-wrapper end hidden slide-left delay-1">
+                    <div class="bubble bubble-right">
+                        Trà sữa! 🧋 Ngon lắm nhaaa, ước gì anh ở đây uống chung.
+                    </div>
+                    <div class="avatar my-avatar">E</div>
+                </div>
+                <div class="chat-wrapper start hidden slide-right delay-2">
+                    <div class="avatar">A</div>
+                    <div class="bubble bubble-left">
+                        Chờ anh xíu, anh đặt ship một cốc cho mình uống online. ❤️
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Open When... Letters (Ý tưởng 2) -->
+        <section class="screen open-when-section hidden">
+            <h3 class="glowing-title">Hộp Thư "Open When..." 💌</h3>
+            <p class="subtitle fade-in">Nhấn vào từng lá thư mỗi khi cảm xúc ùa về nhé!</p>
+
+            <div class="letters-container">
+                <!-- Card 1 -->
+                <div class="flip-card fade-in delay-1">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span>Mở ra khi em thấy áp lực mệt mỏi</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="placeholder-img" style="min-height: 80px; padding: 10px;">
+                                <i data-feather="smile"></i><span style="font-size:0.75rem;">[Ảnh em rạng rỡ
+                                    nhất]</span>
+                            </div>
+                            <p style="font-size: 0.9rem;">"Hãy nhìn cô gái trong ảnh giỏi giang nhường nào! Mọi khó khăn
+                                rồi sẽ qua, có anh luôn ở phía sau cổ vũ em."</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="flip-card fade-in delay-2">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span>Mở ra khi hai đứa đang cãi nhau</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="placeholder-img" style="min-height: 80px; padding: 10px;">
+                                <i data-feather="frown"></i><span style="font-size:0.75rem;">[Ảnh dìm hài hước của
+                                    anh/em]</span>
+                            </div>
+                            <p style="font-size: 0.9rem;">"Anh xin lỗi nếu làm em buồn. Cãi nhau để hiểu nhau hơn chứ
+                                không phải xa nhau. Nhìn ảnh này rồi cười lên nha!"</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="flip-card fade-in delay-3">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span>Mở ra đúng ngày 01/04</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p style="font-size: 1.1rem; color: #ff4b7e; font-weight: bold; margin-top:20px;">Chúc Mừng
+                                Kỷ Niệm 1 Năm! 🎉</p>
+                            <p style="font-size: 0.95rem; margin-top: 10px;">"Dù chưa từng gặp nhau ngoài đời, nhưng
+                                tình yêu anh dành cho em lấp đầy khoảng cách đó. Cảm ơn em, yêu em!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Những điều chưa làm được -->
+        <section class="screen not-yet-section hidden">
+            <h3 class="super-romantic fade-in">Anh biết...</h3>
+            <div class="not-yet-list">
+                <p class="fade-in delay-1">Chúng ta chưa từng nắm tay dạo bước dưới một bầu trời...</p>
+                <p class="fade-in delay-2">Chưa thể đưa đón em tan làm lúc trời mưa...</p>
+            </div>
+            <hr class="separator fade-in delay-3">
+            <h2 class="bold-promise fade-in delay-4">Nhưng Bucket List phía dưới, anh hứa sẽ làm tất cả với em!</h2>
+        </section>
+
+        <!-- SECTION 8: Future Promise -->
+        <section class="screen promise-checklist hidden">
+            <h3 class="glowing-title">Future Promise 📝</h3>
+            <div class="checklist">
+                <label class="check-item hidden slide-up delay-1">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span class="text">Đón em ở sân bay / nhà ga</span>
+                </label>
+                <label class="check-item hidden slide-up delay-2">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span class="text">Ôm em thật chặt khi gặp mặt</span>
+                </label>
+                <label class="check-item hidden slide-up delay-3">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span class="text">Đưa em đi ăn món khoái khẩu</span>
+                </label>
+                <label class="check-item hidden slide-up delay-4">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span class="text">Chụp hàng ngàn bức ảnh ngớ ngẩn</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- SECTION 9: Final Surprise -->
+        <section class="screen final-surprise hidden">
+            <button id="surpriseBtn" class="glow-btn pulse-glow fade-in">Lần tới khi gặp nhau... 🎀</button>
+            <div id="surpriseContent" class="hidden-content">
+                <h1 class="super-romantic slide-up">Anh sẽ biến nó thành hiện thực! 💖</h1>
+                <p class="fade-in delay-1 mt-2">Love you to the stars and back!</p>
+                <!-- Pháo hoa hoặc hiệu ứng hoa rơi sẽ đc handle bằng JS -->
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>
