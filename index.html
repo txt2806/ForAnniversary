@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khoảng Cách Nhưng Không Xa 💖</title>
+    <title>For Mias 💖</title>
     <!-- Modern Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,10 +23,13 @@
     <!-- Audio controls -->
     <div class="music-player fade-in" id="musicPlayer">
         <audio id="bgMusic" loop>
-            <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_2d03cc3e6c.mp3" type="audio/mpeg">
+            <source src="sound/bgm.mp3" type="audio/mpeg">
         </audio>
-        <button id="musicToggle"><i data-feather="volume-x"></i></button>
-        <span class="music-hint">Bật nhạc lên nhé 🎵</span>
+        <div class="controls-row">
+            <button id="musicToggle"><i data-feather="volume-x"></i></button>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" class="volume-slider">
+        </div>
+        <span class="music-hint clickable-hint">Bật nhạc lên nhé 🎵</span>
     </div>
 
     <main>
@@ -54,11 +57,11 @@
         <!-- SECTION 2: MAP & TIME (Ý tưởng 1) -->
         <section class="screen time-counter-section hidden">
             <h3>Bản đồ nối hai thế giới 🌍</h3>
-            <p class="subtitle">1700km chưa từng làm khó được đôi ta...</p>
+            <p class="subtitle">Hơn 1000km chưa từng làm khó được đôi ta...</p>
 
             <div class="map-connection fade-in delay-1">
                 <div class="location-dot pulse">
-                    <i data-feather="map-pin"></i> <span>Hà Nội</span>
+                    <i data-feather="map-pin"></i> <span>Hà Nội </span>
                 </div>
                 <div class="dashed-line">
                     <div class="plane-icon"><i data-feather="send"></i></div>
@@ -98,30 +101,28 @@
                 <div class="timeline-item left hidden pop-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content glass-panel">
-                        <div class="placeholder-img">
-                            <i data-feather="image"></i><span>[Thêm ảnh em mỉm cười]</span>
-                        </div>
-                        <h4>Ngày đầu tương tư</h4>
-                        <p>Cô gái ở <span id="emStoryLocation">TP. HCM</span> ngày hôm đó đã làm anh rung động từ cái
-                            nhìn đầu tiên.</p>
+                        <img src="img/1.jpg" alt="Ngày đầu thành đôi" class="timeline-img">
+                        <h4>Ngày đầu chúng ta thành một cặp</h4>
+                        <p>Cái ngày mà mỗi khi nghĩ lại anh đều biết ơn bản thân vì đã dũng cảm nói lời yêu em.</p>
                     </div>
                 </div>
                 <div class="timeline-item right hidden pop-in delay-1">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content glass-panel">
-                        <h4>Cuộc gọi đầu tiên (4:50:00)</h4>
-                        <p>Nói chuyện tới gần sáng mà chẳng hết chuyện. Giọng em kể về một ngày của em nghe mới bình yên
-                            làm sao.</p>
+                        <img src="img/2.jpg" alt="Nói lời yêu nhau" class="timeline-img">
+                        <h4>Những lần nói lời yêu nhau</h4>
+                        <p>Những lần mà chúng ta chúc ngủ ngon rồi nói yêu nhau. Nhìn lại thật hạnh phúc lắm luôn á.
+                            Trong cái khoảnh khắc ấy, anh nghĩ là anh đang là người đàn ông hạnh phúc nhất thế giới r.
+                        </p>
                     </div>
                 </div>
                 <div class="timeline-item left hidden pop-in delay-2">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content glass-panel">
-                        <div class="placeholder-img">
-                            <i data-feather="video"></i><span>[Ảnh screenshot call video kute]</span>
-                        </div>
-                        <h4>01/04 - Cá Tháng Tư có thật</h4>
-                        <p>Ngày người ta nói dối, nhưng lời nói yêu em thì 100% chân thật.</p>
+                        <img src="img/3.jpg" alt="Dỗ dành em" class="timeline-img">
+                        <h4>Những lần dỗ dành em</h4>
+                        <p>Những lần thấy em khóc, trong lòng anh cảm thấy đau lắm, xót lắm. Những lần đó anh cảm thấy
+                            anh thương em nhiều lắm, nhiều lắm luôn á.</p>
                     </div>
                 </div>
             </div>
@@ -136,76 +137,57 @@
                 <div class="gallery-track">
                     <!-- Artwork 1 -->
                     <div class="artwork-frame">
-                        <div class="artwork-img placeholder-img">
-                            <i data-feather="sun"></i><span>[Ảnh lúc em mới ngủ dậy]</span>
-                        </div>
+                        <img src="img/4.jpg" alt="mỗi lần em có đồ mới" class="artwork-img">
                         <div class="artwork-caption">
-                            <h4 class="artwork-title">Bình minh thứ 200</h4>
-                            <p class="artwork-desc">"Dù chỉ nhìn qua màn hình, đây vẫn là tác phẩm tuyệt nhất mỗi sáng
-                                thức dậy."</p>
+                            <h4 class="artwork-title">Mỗi lần em có đồ mới</h4>
+                            <p class="artwork-desc">"Anh nhớ mỗi lần em có những thứ gì mới như làm cái móng này nè, em
+                                thường gọi cho anh đầu tiên và khoe. Dù chỉ nhìn qua màn hình thôi nhưng mà khuôn mặt
+                                vui vẻ rạng rỡ của em lúc đó thực sự khiến anh thấy vui lây và cảm thấy hạnh phúc cực
+                                kỳ"</p>
                         </div>
                     </div>
                     <!-- Artwork 2 -->
                     <div class="artwork-frame">
-                        <div class="artwork-img placeholder-img">
-                            <i data-feather="coffee"></i><span>[Ảnh em ăn vặt/uống trà sữa]</span>
-                        </div>
+                        <img src="img/5.jpg" alt="Bức ảnh siu dễ thương" class="artwork-img">
                         <div class="artwork-caption">
-                            <h4 class="artwork-title">Cô bé má bánh bao</h4>
-                            <p class="artwork-desc">"Nhìn dáng vẻ ăn uống say mê này, chỉ muốn ở bên cạnh bảo vệ mãi
-                                thôi."</p>
+                            <h4 class="artwork-title">Bức ảnh siu dễ thương của em</h4>
+                            <p class="artwork-desc">"Bức ảnh nào của em gửi anh cũng xinh và dễ thương hết á, anh có cả
+                                một list ảnh rất nhiều của em luôn. nhưng mà anh lấy bức này đại diện nhé hjhj,thực sự
+                                ảnh nào cũng đẹp và siu dễ thương"</p>
                         </div>
                     </div>
                     <!-- Artwork 3 -->
                     <div class="artwork-frame">
-                        <div class="artwork-img placeholder-img">
-                            <i data-feather="moon"></i><span>[Ảnh chụp lúc khuya/nháy mắt]</span>
-                        </div>
+                        <img src="img/6.jpg" alt="Ánh mắt của em" class="artwork-img">
                         <div class="artwork-caption">
-                            <h4 class="artwork-title">Vì sao đêm nay</h4>
-                            <p class="artwork-desc">"Trong phòng tối om, nụ cười em vẫn lấp lánh như ngàn vì sao."</p>
+                            <h4 class="artwork-title">Ánh mắt của em</h4>
+                            <p class="artwork-desc">"Thực sự thì thứ anh thích nhất chính là đôi mắt của em. Thực sự là
+                                anh không biết làm cách nào để miêu tả hết vẻ đẹp của nó, nó thực sự rất là đẹp luôn.
+                                mỗi lần đôi mắt đó nhìn anh, tim anh đều hững lại một nhịp vì đôi mắt đó, nó đẹp quá,
+                                nhất là những lần em nháy mắt với anh, thực sự anh k thể chịu nổi"</p>
                         </div>
                     </div>
 
-                    <!-- Countdown End Room -->
-                    <div class="artwork-frame countdown-frame">
-                        <div class="countdown-content glass-panel h-100 flex-center">
-                            <h4 class="super-romantic">Sắp Gặp Nhau Rồi! ⏳</h4>
-                            <p style="margin-bottom: 20px;">Thời gian đến lúc anh được ôm em:</p>
-                            <div class="countdown-boxes">
-                                <div class="c-box"><span id="mDays">00</span><small>Ngày</small></div>
-                                <div class="c-box"><span id="mHours">00</span><small>Giờ</small></div>
-                                <div class="c-box"><span id="mMins">00</span><small>Phút</small></div>
-                                <div class="c-box"><span id="mSecs">00</span><small>Giây</small></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+            </div>
+            </div>
             </div>
         </section>
 
-        <!-- SECTION 5: Chat History -->
-        <section class="screen chat-history hidden">
-            <h3 class="romantic-text">Góc kỉ niệm vụn vặt...</h3>
+        <!-- SECTION 5: Coser Museum -->
+        <section class="screen coser-gallery-section hidden">
+            <h3 class="romantic-text prominent-title">Anh biết em là một coser nên...</h3>
+            <p class="subtitle fade-in">Nơi này chính là bảo tàng ảnh cos của em mà anh đã sưu tầm được, nó chính là kho
+                báu lớn nhất nằm trong chiếc điện thoại của anh á.</p>
 
-            <div class="chat-container">
-                <div class="chat-wrapper start hidden slide-right">
-                    <div class="avatar">A</div>
-                    <div class="bubble bubble-left">
-                        Hôm nay em ăn món gì đó? Chụp anh xem đi.
-                    </div>
+            <div class="marquee-container">
+                <div class="marquee-track" id="coserTrack1">
+                    <!-- Images will be injected by JS -->
                 </div>
-                <div class="chat-wrapper end hidden slide-left delay-1">
-                    <div class="bubble bubble-right">
-                        Trà sữa! 🧋 Ngon lắm nhaaa, ước gì anh ở đây uống chung.
-                    </div>
-                    <div class="avatar my-avatar">E</div>
-                </div>
-                <div class="chat-wrapper start hidden slide-right delay-2">
-                    <div class="avatar">A</div>
-                    <div class="bubble bubble-left">
-                        Chờ anh xíu, anh đặt ship một cốc cho mình uống online. ❤️
-                    </div>
+            </div>
+            <div class="marquee-container" dir="rtl">
+                <div class="marquee-track" id="coserTrack2">
+                    <!-- Images will be injected by JS -->
                 </div>
             </div>
         </section>
@@ -223,12 +205,10 @@
                             <span>Mở ra khi em thấy áp lực mệt mỏi</span>
                         </div>
                         <div class="flip-card-back">
-                            <div class="placeholder-img" style="min-height: 80px; padding: 10px;">
-                                <i data-feather="smile"></i><span style="font-size:0.75rem;">[Ảnh em rạng rỡ
-                                    nhất]</span>
-                            </div>
-                            <p style="font-size: 0.9rem;">"Hãy nhìn cô gái trong ảnh giỏi giang nhường nào! Mọi khó khăn
-                                rồi sẽ qua, có anh luôn ở phía sau cổ vũ em."</p>
+                            <p style="font-size: 0.9rem;">"Có thể đôi lúc em sẽ gặp khó khăn mệt mỏi nhưng hãy luôn nhớ
+                                rằng bên em luôn có anh, một người sẵn sàng cổ vũ động viên an ủi em mọi lúc mọi nơi"
+                            </p>
+                            <button class="read-more-btn" data-letter="1">Đọc thư 💌</button>
                         </div>
                     </div>
                 </div>
@@ -239,12 +219,10 @@
                             <span>Mở ra khi hai đứa đang cãi nhau</span>
                         </div>
                         <div class="flip-card-back">
-                            <div class="placeholder-img" style="min-height: 80px; padding: 10px;">
-                                <i data-feather="frown"></i><span style="font-size:0.75rem;">[Ảnh dìm hài hước của
-                                    anh/em]</span>
-                            </div>
                             <p style="font-size: 0.9rem;">"Anh xin lỗi nếu làm em buồn. Cãi nhau để hiểu nhau hơn chứ
-                                không phải xa nhau. Nhìn ảnh này rồi cười lên nha!"</p>
+                                không phải xa nhau. Anh biết nhiều lúc anh đã làm em buồn rất nhiều nhưng hi vọng em có
+                                thể bỏ qua cho anh để cùng em đi tiếp nhé được không?"</p>
+                            <button class="read-more-btn" data-letter="2">Đọc thư 💌</button>
                         </div>
                     </div>
                 </div>
@@ -255,10 +233,10 @@
                             <span>Mở ra đúng ngày 01/04</span>
                         </div>
                         <div class="flip-card-back">
-                            <p style="font-size: 1.1rem; color: #ff4b7e; font-weight: bold; margin-top:20px;">Chúc Mừng
-                                Kỷ Niệm 1 Năm! 🎉</p>
-                            <p style="font-size: 0.95rem; margin-top: 10px;">"Dù chưa từng gặp nhau ngoài đời, nhưng
-                                tình yêu anh dành cho em lấp đầy khoảng cách đó. Cảm ơn em, yêu em!"</p>
+
+                            <p style="font-size: 0.95rem; margin-top: 10px;">"Bức thư này sẽ là bức thư đặc biệt nên hãy
+                                mở nó vào đúng ngày kỷ niệm nhé!"</p>
+                            <button class="read-more-btn" data-letter="3">Đọc thư 💌</button>
                         </div>
                     </div>
                 </div>
@@ -283,7 +261,7 @@
                 <label class="check-item hidden slide-up delay-1">
                     <input type="checkbox">
                     <span class="checkmark"></span>
-                    <span class="text">Đón em ở sân bay / nhà ga</span>
+                    <span class="text">Đi du lịch cùng em</span>
                 </label>
                 <label class="check-item hidden slide-up delay-2">
                     <input type="checkbox">
@@ -301,6 +279,8 @@
                     <span class="text">Chụp hàng ngàn bức ảnh ngớ ngẩn</span>
                 </label>
             </div>
+            <button id="submitBucketList" class="glow-btn mt-4 fade-in delay-5">Em muốn anh làm những thứ này</button>
+            <p id="promiseMessage" class="promise-message hidden mt-4"></p>
         </section>
 
         <!-- SECTION 9: Final Surprise -->
@@ -313,6 +293,28 @@
             </div>
         </section>
     </main>
+
+    <!-- Letter Modal Overlay -->
+    <div id="letterModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="letter-paper">
+                <div class="letter-header">💌 Gửi Em...</div>
+                <div id="modalLetterContent" class="letter-body">
+                    <!-- Dynamic content will be injected here -->
+                </div>
+                <div class="letter-footer">Mãi yêu em ❤️</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal-overlay">
+        <div class="modal-content image-modal-content">
+            <span class="close-image-modal close-modal">&times;</span>
+            <img id="enlargedImg" src="" alt="Enlarged view">
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <script>
         feather.replace();
